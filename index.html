@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<meta name="description" content="GTA ON – Community Business Portal / Portal Comunitario de Negocios">
+<meta name="description" content="GTA-ON – Greater Toronto Area Community Business Portal">
 <!-- ① Favicon: paste your favicon URL in FAVICON_URL constant below. This tag is updated by JS on load. -->
 <link rel="icon" id="faviconTag" href="data:,">
-<title>GTA ON – Community Business Portal</title>
+<title>GTA-ON – Community Business Portal</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <style>
 /* ══════════════════════════════════════════════════
@@ -343,7 +343,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
         <!-- ② Logo: if LOGO_URL is set, shows image; otherwise shows emoji -->
         <div class="logo-icon" id="logoIconWrap">🏘️</div>
         <div>
-          <div class="logo-text">GTA  <span>ON</span></div>
+          <div class="logo-text">GTA<span>-ON</span></div>
           <div class="logo-sub" data-t="portalSub">Community Portal</div>
         </div>
       </a>
@@ -363,7 +363,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
           <span class="accent" data-t="heroLine2">Marketplace</span><br>
           <span class="accent2" data-t="heroLine3">Connects.</span>
         </h1>
-        <p class="hero-sub" data-t="heroSub">The official business directory and marketplace for the GTA ON community — find services, post offers, and grow together.</p>
+        <p class="hero-sub" data-t="heroSub">The official business directory and marketplace of the GTA-ON community — find services, post offers, and grow together.</p>
         <div class="hero-stats">
           <div class="stat"><div class="stat-num" id="statBusinesses">0</div><div class="stat-label" data-t="statBiz">Businesses</div></div>
           <div class="stat"><div class="stat-num" id="statRequests">0</div><div class="stat-label" data-t="statReq">Open Requests</div></div>
@@ -442,7 +442,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
 </main>
 
 <footer class="footer">
-  <p>© 2025 <a href="https://gta-on.com">gta-on.com</a> · <span data-t="footerLine1">Community Business Portal · All rights reserved</span></p>
+  <p>© 2025 <a href="https://www.gta-on.com">GTA-ON.com</a> · <span data-t="footerLine1">Community Business Portal · All rights reserved</span></p>
   <p><span data-t="footerLine2">Listings expire after 60 days · Archived items kept 60 additional days</span></p>
 </footer>
 
@@ -459,7 +459,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
     </div>
     <div class="modal-body">
       <div class="form-row">
-        <div class="form-group"><label class="form-label" data-t="fBizName">Business Name <span class="req">*</span></label><input class="form-input" id="biz_name" type="text" placeholder="e.g. Mi Tienda Favorita"></div>
+        <div class="form-group"><label class="form-label" data-t="fBizName">Business Name <span class="req">*</span></label><input class="form-input" id="biz_name" type="text" placeholder="e.g. My Local Business"></div>
         <div class="form-group"><label class="form-label" data-t="fOwner">Owner Name <span class="req">*</span></label><input class="form-input" id="biz_owner" type="text" placeholder="Full name"></div>
       </div>
       <div class="form-row">
@@ -468,11 +468,11 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
       </div>
       <div class="form-group"><label class="form-label" data-t="fDesc">Description <span class="req">*</span></label><textarea class="form-textarea" id="biz_desc" placeholder="Describe your business and services…"></textarea></div>
       <div class="form-row">
-        <div class="form-group"><label class="form-label" data-t="fPhone">Phone <span class="req">*</span></label><input class="form-input" id="biz_phone" type="tel" placeholder="+52 664 000 0000"></div>
+        <div class="form-group"><label class="form-label" data-t="fPhone">Phone <span class="req">*</span></label><input class="form-input" id="biz_phone" type="tel" placeholder="+1 416 000 0000"></div>
         <div class="form-group"><label class="form-label" data-t="fEmail">Email <span class="req">*</span></label><input class="form-input" id="biz_email" type="email" placeholder="business@email.com"></div>
       </div>
       <div class="form-row">
-        <div class="form-group"><label class="form-label" data-t="fAddress">Address</label><input class="form-input" id="biz_address" type="text" placeholder="Street, Neighborhood"></div>
+        <div class="form-group"><label class="form-label" data-t="fAddress">Address</label><input class="form-input" id="biz_address" type="text" placeholder="Street, City, ON"></div>
         <div class="form-group"><label class="form-label" data-t="fWebsite">Website / Social</label><input class="form-input" id="biz_website" type="text" placeholder="https://..."></div>
       </div>
       <div class="form-group">
@@ -519,12 +519,12 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
       <div class="form-group"><label class="form-label" data-t="fCategory">Category <span class="req">*</span></label><select class="form-select" id="req_category"></select></div>
       <div class="form-group"><label class="form-label" data-t="fDesc">Description <span class="req">*</span></label><textarea class="form-textarea" id="req_desc" placeholder="Describe what you need, location, timing…"></textarea></div>
       <div class="form-row">
-        <div class="form-group"><label class="form-label" data-t="fBudgetMin">Budget Min (MXN)</label><input class="form-input" id="req_min" type="number" placeholder="500" min="0"></div>
-        <div class="form-group"><label class="form-label" data-t="fBudgetMax">Budget Max (MXN)</label><input class="form-input" id="req_max" type="number" placeholder="1500" min="0"></div>
+        <div class="form-group"><label class="form-label" data-t="fBudgetMin">Budget Min (CAD)</label><input class="form-input" id="req_min" type="number" placeholder="100" min="0"></div>
+        <div class="form-group"><label class="form-label" data-t="fBudgetMax">Budget Max (CAD)</label><input class="form-input" id="req_max" type="number" placeholder="500" min="0"></div>
       </div>
       <div class="form-row">
         <div class="form-group"><label class="form-label" data-t="fYourName">Your Name <span class="req">*</span></label><input class="form-input" id="req_name" type="text" placeholder="First name is fine"></div>
-        <div class="form-group"><label class="form-label" data-t="fPhone">Phone <span class="req">*</span></label><input class="form-input" id="req_phone" type="tel" placeholder="+52 664 000 0000"></div>
+        <div class="form-group"><label class="form-label" data-t="fPhone">Phone <span class="req">*</span></label><input class="form-input" id="req_phone" type="tel" placeholder="+1 416 000 0000"></div>
       </div>
       <div class="form-group"><label class="form-label" data-t="fEmailOpt">Email (optional)</label><input class="form-input" id="req_email" type="email" placeholder="your@email.com"></div>
       <button class="btn btn-sky" style="width:100%;justify-content:center;margin-top:8px;padding:13px" onclick="submitRequest(event)" data-t="btnPostReqSubmit">Post Request →</button>
@@ -542,15 +542,15 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
     </div>
     <div class="modal-body">
       <p style="font-size:12px;color:rgba(10,10,18,.48);margin-bottom:16px" data-t="offHint">Offer your services or products to the community. Expires in 60 days.</p>
-      <div class="form-group"><label class="form-label" data-t="fOffTitle">Offer Title <span class="req">*</span></label><input class="form-input" id="off_title" type="text" placeholder="e.g. Homemade tamales, 12-pack"></div>
+      <div class="form-group"><label class="form-label" data-t="fOffTitle">Offer Title <span class="req">*</span></label><input class="form-input" id="off_title" type="text" placeholder="e.g. Home-baked goods, weekly box"></div>
       <div class="form-row">
         <div class="form-group"><label class="form-label" data-t="fCategory">Category <span class="req">*</span></label><select class="form-select" id="off_category"></select></div>
-        <div class="form-group"><label class="form-label" data-t="fPrice">Price (MXN)</label><input class="form-input" id="off_price" type="number" placeholder="250" min="0"></div>
+        <div class="form-group"><label class="form-label" data-t="fPrice">Price (CAD)</label><input class="form-input" id="off_price" type="number" placeholder="50" min="0"></div>
       </div>
       <div class="form-group"><label class="form-label" data-t="fDesc">Description <span class="req">*</span></label><textarea class="form-textarea" id="off_desc" placeholder="Describe your offer, availability, conditions…"></textarea></div>
       <div class="form-row">
         <div class="form-group"><label class="form-label" data-t="fBizYourName">Business / Your Name <span class="req">*</span></label><input class="form-input" id="off_biz" type="text" placeholder="Business or personal name"></div>
-        <div class="form-group"><label class="form-label" data-t="fPhone">Phone <span class="req">*</span></label><input class="form-input" id="off_phone" type="tel" placeholder="+52 664 000 0000"></div>
+        <div class="form-group"><label class="form-label" data-t="fPhone">Phone <span class="req">*</span></label><input class="form-input" id="off_phone" type="tel" placeholder="+1 416 000 0000"></div>
       </div>
       <div class="form-group"><label class="form-label" data-t="fEmailOpt">Email (optional)</label><input class="form-input" id="off_email" type="email" placeholder="your@email.com"></div>
       <div class="form-group">
@@ -621,9 +621,9 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
 /* ════════════════════════════════════════════════════
    ① CONFIGURATION — edit these values
 ════════════════════════════════════════════════════ */
-const GAS_URL    = 'https://tinyurl.com/256o5nqq'; // ← paste your GAS /exec URL
-const SITE_NAME  = 'gta-on.com';
-const SITE_URL   = 'https://gta-on.com';
+const GAS_URL    = 'https://tinyurl.com/22w4ka87'; // ← paste your GAS /exec URL
+const SITE_NAME  = 'GTA-ON.com';
+const SITE_URL   = 'https://www.gta-on.com';
 // ② Paste your favicon URL (e.g. 'https://yourdomain.com/favicon.png') or leave '' for none
 const FAVICON_URL = 'https://static.wixstatic.com/media/49ea47_ce5db0b4b1424b8b974244c09f5553b4~mv2.jpg';
 // ③ Paste your logo image URL (e.g. 'https://yourdomain.com/logo.png') or leave '' for emoji
@@ -678,7 +678,7 @@ const STRINGS = {
   en:{
     portalSub:'Community Portal', btnArchive:'🗂 Archived', btnRegister:'+ Register Business',
     heroLine1:'Your Community', heroLine2:'Marketplace', heroLine3:'Connects.',
-    heroSub:'The official business directory and marketplace for the GTA ON community — find services, post offers, and grow together.',
+    heroSub:'The official business directory and marketplace of the GTA-ON community — find services, post offers, and grow together.',
     statBiz:'Businesses', statReq:'Open Requests', statOff:'Active Offers',
     ctaDir:'🏪 Browse Directory', ctaReq:'📋 Post a Request', ctaOff:'💼 Post an Offer',
     catBeauty:'Beauty & Personal Care', catHome:'Home Services', catFood:'Food & Beverages',
@@ -700,11 +700,11 @@ const STRINGS = {
     bannerNote:'💳 After registration you\'ll be redirected to PayPal. Banner goes live after admin approval (within 24 hours).',
     btnSubmitBiz:'Register Business →',
     modalReqTitle:'Post a Service Request', reqHint:'Tell the community what you need. Listing expires in 60 days.',
-    fReqTitle:'Request Title', fBudgetMin:'Budget Min (MXN)', fBudgetMax:'Budget Max (MXN)',
+    fReqTitle:'Request Title', fBudgetMin:'Budget Min (CAD)', fBudgetMax:'Budget Max (CAD)',
     fYourName:'Your Name', fEmailOpt:'Email (optional)',
     btnPostReqSubmit:'Post Request →',
     modalOffTitle:'Post an Offer or Product', offHint:'Offer your services or products to the community. Expires in 60 days.',
-    fOffTitle:'Offer Title', fPrice:'Price (MXN)', fBizYourName:'Business / Your Name', fPhotoOpt:'Photo (optional)',
+    fOffTitle:'Offer Title', fPrice:'Price (CAD)', fBizYourName:'Business / Your Name', fPhotoOpt:'Photo (optional)',
     btnPostOffSubmit:'Post Offer →',
     modalArchTitle:'Search Archived Posts', archHint:'Search expired posts. Archived items are kept for 60 additional days.',
     btnSearch:'Search', archEmpty:'Enter a search term', archEmptySub:'Search through archived posts',
@@ -722,7 +722,7 @@ const STRINGS = {
     posting:'Posting…', submitReqOk:'✅ Request posted! It will be visible for 60 days.',
     submitOffOk:'✅ Offer posted! It will be visible for 60 days.', postFail:'Failed to post. Please try again.',
     justNow:'Just now', ago:'ago', archived:'Archived',
-    footerLine1:'Community Business Portal · All rights reserved',
+    footerLine1:'GTA-ON Community Business Portal · All rights reserved',
     footerLine2:'Listings expire after 60 days · Archived items kept 60 additional days',
     catOptSel:'Select category…',
     REQUEST:'REQUEST', OFFER:'OFFER', ARCHIVED_LABEL:'ARCHIVED',
@@ -736,7 +736,7 @@ const STRINGS = {
   es:{
     portalSub:'Portal Comunitario', btnArchive:'🗂 Archivados', btnRegister:'+ Registrar Negocio',
     heroLine1:'Tu Mercado', heroLine2:'Comunitario', heroLine3:'Conecta.',
-    heroSub:'El directorio oficial de negocios y mercado de la comunidad GTA ON — encuentra servicios, publica ofertas y crezcamos juntos.',
+    heroSub:'El directorio oficial de negocios y mercado de la comunidad GTA-ON — encuentra servicios, publica ofertas y crezcamos juntos.',
     statBiz:'Negocios', statReq:'Solicitudes', statOff:'Ofertas Activas',
     ctaDir:'🏪 Ver Directorio', ctaReq:'📋 Publicar Solicitud', ctaOff:'💼 Publicar Oferta',
     catBeauty:'Belleza y Cuidado Personal', catHome:'Servicios del Hogar', catFood:'Alimentos y Bebidas',
@@ -758,11 +758,11 @@ const STRINGS = {
     bannerNote:'💳 Al registrarte serás redirigido a PayPal. Tu banner se activa tras la aprobación del administrador (normalmente en 24 horas).',
     btnSubmitBiz:'Registrar Negocio →',
     modalReqTitle:'Publicar Solicitud de Servicio', reqHint:'Dile a la comunidad qué necesitas. La publicación expira en 60 días.',
-    fReqTitle:'Título de la Solicitud', fBudgetMin:'Presupuesto Mínimo (MXN)', fBudgetMax:'Presupuesto Máximo (MXN)',
+    fReqTitle:'Título de la Solicitud', fBudgetMin:'Presupuesto Mínimo (CAD)', fBudgetMax:'Presupuesto Máximo (CAD)',
     fYourName:'Tu Nombre', fEmailOpt:'Correo Electrónico (opcional)',
     btnPostReqSubmit:'Publicar Solicitud →',
     modalOffTitle:'Publicar Oferta o Producto', offHint:'Ofrece tus servicios o productos a la comunidad. Expira en 60 días.',
-    fOffTitle:'Título de la Oferta', fPrice:'Precio (MXN)', fBizYourName:'Negocio / Tu Nombre', fPhotoOpt:'Foto (opcional)',
+    fOffTitle:'Título de la Oferta', fPrice:'Precio (CAD)', fBizYourName:'Negocio / Tu Nombre', fPhotoOpt:'Foto (opcional)',
     btnPostOffSubmit:'Publicar Oferta →',
     modalArchTitle:'Buscar Publicaciones Archivadas', archHint:'Busca publicaciones expiradas. Los archivados se conservan 60 días adicionales.',
     btnSearch:'Buscar', archEmpty:'Ingresa un término', archEmptySub:'Busca entre publicaciones archivadas',
@@ -780,7 +780,7 @@ const STRINGS = {
     posting:'Publicando…', submitReqOk:'✅ ¡Solicitud publicada! Será visible por 60 días.',
     submitOffOk:'✅ ¡Oferta publicada! Será visible por 60 días.', postFail:'Error al publicar. Intenta de nuevo.',
     justNow:'Ahora mismo', ago:'', archived:'Archivado',
-    footerLine1:'Portal Comunitario de Negocios · Todos los derechos reservados',
+    footerLine1:'Portal Comunitario GTA-ON · Todos los derechos reservados',
     footerLine2:'Las publicaciones expiran en 60 días · Los archivados se conservan 60 días adicionales',
     catOptSel:'Selecciona categoría…',
     REQUEST:'SOLICITUD', OFFER:'OFERTA', ARCHIVED_LABEL:'ARCHIVADO',
@@ -1016,7 +1016,7 @@ function renderReq() {
 }
 function reqCardHtml(r, idx) {
   const days = Math.ceil((new Date(r.expiryDate)-Date.now())/86400000);
-  const budget = (r.budgetMin||r.budgetMax) ? `$${r.budgetMin||0}${r.budgetMax&&r.budgetMax!=r.budgetMin?' – $'+r.budgetMax:''} MXN` : T('negotiable');
+  const budget = (r.budgetMin||r.budgetMax) ? `$${r.budgetMin||0}${r.budgetMax&&r.budgetMax!=r.budgetMin?' – $'+r.budgetMax:''} CAD` : T('negotiable');
   return `
   <div class="market-card req-card" onclick="openDetail('req',allReq[${idx}])">
     <div class="mc-header">
@@ -1056,7 +1056,7 @@ function renderOff() {
 }
 function offCardHtml(o, idx) {
   const days = Math.ceil((new Date(o.expiryDate)-Date.now())/86400000);
-  const price = o.price ? `$${Number(o.price).toLocaleString()} MXN` : T('priceOnRequest');
+  const price = o.price ? `$${Number(o.price).toLocaleString()} CAD` : T('priceOnRequest');
   return `
   <div class="market-card off-card" onclick="openDetail('off',allOff[${idx}])">
     ${o.imageUrl?`<div class="offer-img"><img src="${esc(o.imageUrl)}" alt="" loading="lazy" onerror="this.style.display='none'"></div>`:''}
@@ -1122,14 +1122,14 @@ function openDetail(type, item) {
     if(item.category) metaItems.push([T('dtCategory'), esc(item.category)]);
     if(item.registeredDate) metaItems.push([T('dtPosted'), new Date(item.registeredDate).toLocaleDateString()]);
   } else if(type==='req') {
-    const budget = (item.budgetMin||item.budgetMax) ? `$${item.budgetMin||0}${item.budgetMax&&item.budgetMax!=item.budgetMin?' – $'+item.budgetMax:''} MXN` : T('negotiable');
+    const budget = (item.budgetMin||item.budgetMax) ? `$${item.budgetMin||0}${item.budgetMax&&item.budgetMax!=item.budgetMin?' – $'+item.budgetMax:''} CAD` : T('negotiable');
     metaItems.push([T('dtBudget'), budget]);
     if(item.category) metaItems.push([T('dtCategory'), esc(item.category)]);
     metaItems.push([T('dtContact'), esc(item.contactName)]);
     if(item.contactPhone) metaItems.push([T('dtPhone'), `<a href="tel:${esc(item.contactPhone)}">${esc(item.contactPhone)}</a>`]);
     if(item.expiryDate) metaItems.push([T('dtExpires'), new Date(item.expiryDate).toLocaleDateString()]);
   } else {
-    const price = item.price ? `$${Number(item.price).toLocaleString()} MXN` : T('priceOnRequest');
+    const price = item.price ? `$${Number(item.price).toLocaleString()} CAD` : T('priceOnRequest');
     metaItems.push([T('dtPrice'), price]);
     if(item.category) metaItems.push([T('dtCategory'), esc(item.category)]);
     if(item.businessName) metaItems.push(['🏢', esc(item.businessName)]);
