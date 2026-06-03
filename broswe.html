@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Browse Listings — GTA-ON</title>
+  <meta name="description" content="Browse all services, requests, and rentals in the Greater Toronto Area." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍁</text></svg>" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo"><span class="maple-leaf">🍁</span> GTA<span class="dot">·</span>ON</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="browse.html">Browse</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="rentals.html">Rentals</a></li>
+    <li><a href="post.html" class="nav-cta">+ Post</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-header">
+  <div class="section-inner">
+    <div>
+      <h1>Browse Listings</h1>
+      <p>All services, requests, and rentals across the GTA</p>
+    </div>
+    <a href="post.html" class="btn btn-primary">+ Post a Listing</a>
+  </div>
+</div>
+
+<section>
+  <div class="section-inner">
+
+    <!-- Search -->
+    <div class="search-wrap">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Search listings, services, locations…" />
+      </div>
+      <select class="form-control" id="citySelect" style="max-width:200px" onchange="filterByCity(this.value)">
+        <option value="all">All GTA Cities</option>
+        <option value="Toronto">Toronto</option>
+        <option value="Mississauga">Mississauga</option>
+        <option value="Brampton">Brampton</option>
+        <option value="Markham">Markham</option>
+        <option value="Vaughan">Vaughan</option>
+        <option value="Richmond Hill">Richmond Hill</option>
+        <option value="Oakville">Oakville</option>
+        <option value="Burlington">Burlington</option>
+        <option value="Ajax">Ajax</option>
+        <option value="Pickering">Pickering</option>
+        <option value="Whitby">Whitby</option>
+        <option value="Oshawa">Oshawa</option>
+      </select>
+    </div>
+
+    <!-- Type Filters -->
+    <div style="margin-bottom:16px">
+      <p style="font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--gray);margin-bottom:10px">Type</p>
+      <div class="filters">
+        <button class="filter-btn active" data-filter-type="all">All Types</button>
+        <button class="filter-btn" data-filter-type="offer">🟢 Offering</button>
+        <button class="filter-btn" data-filter-type="request">🟡 Wanted</button>
+        <button class="filter-btn" data-filter-type="rental">🔵 Rental</button>
+      </div>
+    </div>
+
+    <!-- Category Filters -->
+    <div style="margin-bottom:36px">
+      <p style="font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--gray);margin-bottom:10px">Category</p>
+      <div class="filters">
+        <button class="filter-btn active" data-filter-cat="all">All</button>
+        <button class="filter-btn" data-filter-cat="Home Services">🔧 Home</button>
+        <button class="filter-btn" data-filter-cat="Cleaning">🧹 Cleaning</button>
+        <button class="filter-btn" data-filter-cat="Moving">🚚 Moving</button>
+        <button class="filter-btn" data-filter-cat="Tutoring">📚 Tutoring</button>
+        <button class="filter-btn" data-filter-cat="Pet Care">🐾 Pets</button>
+        <button class="filter-btn" data-filter-cat="Landscaping">🌿 Landscaping</button>
+        <button class="filter-btn" data-filter-cat="Child Care">👶 Child Care</button>
+        <button class="filter-btn" data-filter-cat="Technology">💻 Tech</button>
+        <button class="filter-btn" data-filter-cat="Vehicle">🚗 Vehicle</button>
+        <button class="filter-btn" data-filter-cat="Health">❤️ Health</button>
+        <button class="filter-btn" data-filter-cat="Apartment">🏠 Apartment</button>
+        <button class="filter-btn" data-filter-cat="Room">🛏️ Room</button>
+        <button class="filter-btn" data-filter-cat="Commercial">🏢 Commercial</button>
+        <button class="filter-btn" data-filter-cat="Other">✨ Other</button>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:10px">
+      <p style="font-size:0.9rem;color:var(--gray)"><span id="listingCount">Loading…</span></p>
+      <select class="form-control" style="max-width:180px" onchange="sortListings(this.value)">
+        <option value="newest">Newest First</option>
+        <option value="price-low">Price: Low to High</option>
+        <option value="price-high">Price: High to Low</option>
+      </select>
+    </div>
+
+    <div class="listings-grid" id="listingsGrid">
+      <!-- Loaded by JS -->
+    </div>
+
+  </div>
+</section>
+
+<!-- Listing Detail Modal -->
+<div class="modal-overlay" id="listingModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('listingModal')">✕</button>
+    <div id="listingDetail"></div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo"><span class="maple-leaf">🍁</span> GTA<span class="dot">·</span>ON</a>
+        <p>A free community platform for the Greater Toronto Area, Ontario.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="browse.html">Browse All</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="rentals.html">Rentals</a></li>
+          <li><a href="post.html">Post a Listing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col"><h4>Info</h4><ul><li><a href="about.html">About</a></li><li><a href="about.html#safety">Safety Tips</a></li><li><a href="about.html#contact">Contact</a></li></ul></div>
+      <div class="footer-col"></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 GTA-ON.com</span>
+      <span>Made with 🍁 for the GTA community</span>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" class="toast"></div>
+<script src="js/main.js"></script>
+<script>
+  // Read URL params on load
+  document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const cat = params.get('cat');
+    const type = params.get('type');
+    if (cat) {
+      const btn = document.querySelector(`[data-filter-cat="${cat}"]`);
+      if (btn) { btn.click(); }
+    }
+    if (type) {
+      const btn = document.querySelector(`[data-filter-type="${type}"]`);
+      if (btn) { btn.click(); }
+    }
+  });
+
+  function filterByCity(city) {
+    window._cityFilter = city === 'all' ? '' : city;
+    currentFilters.city = window._cityFilter;
+    currentPage = 1;
+    renderFilteredListings();
+  }
+
+  function sortListings(mode) {
+    if (mode === 'price-low') allListings.sort((a,b) => (parseFloat(a.price)||0)-(parseFloat(b.price)||0));
+    else if (mode === 'price-high') allListings.sort((a,b) => (parseFloat(b.price)||0)-(parseFloat(a.price)||0));
+    else allListings.sort((a,b) => new Date(b.date)-new Date(a.date));
+    renderFilteredListings();
+  }
+</script>
+</body>
+</html>
